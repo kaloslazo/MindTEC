@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 client = Client(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN)
 
-def sendMessage(to_phone, body_data):
+def sendWhatsappMessage(to_phone, body_data):
     if to_phone.startswith('whatsapp:'): to_phone = to_phone[9:].strip()
     if not to_phone.startswith('+'): to_phone = '+' + to_phone
     

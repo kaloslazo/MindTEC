@@ -1,1 +1,1 @@
-from .twilio_service import sendMessage
+from .twilio_service import *

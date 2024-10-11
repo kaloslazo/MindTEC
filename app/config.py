@@ -13,6 +13,6 @@ class Config:
     # Configuraciones actualizadas para Qdrant
     QDRANT_URL = os.getenv('QDRANT_URL')
     QDRANT_API_KEY = os.getenv('QDRANT_API_KEY')
-    QDRANT_COLLECTION_NAME = 'syllabus_collection'
+    QDRANT_COLLECTION_NAME = os.getenv('QDRANT_COLLECTION_NAME')
 
 config = Config()
