@@ -39,6 +39,9 @@ def load_csv(file_path):
             elif "deportes" in file_path.lower():
                 content = process_deporte(row)
                 doc_type = "deporte"
+            elif "organizations" in file_path.lower():
+                content = process_organizations(row)
+                doc_type = "organization"
             else:
                 logger.warning(f"Tipo de archivo desconocido: {file_path}")
                 continue
@@ -66,3 +69,10 @@ def process_deporte(row):
            f"Tiempo de reserva: {row.get('Tiempo de reserva', 'No especificado')}\n" \
            f"Lugar: {row.get('Lugar', 'No especificado')}\n" \
            f"Link para reserva: {row.get('Link para hacer reserva', 'No especificado')}"
+           
+def process_organizations(row):
+    # Tipo de Organizacion,Nombre de Organizacion,Correo de Organizacion,Descripcion de la Organizacion
+    return f"Tipo de organización: {row.get('Tipo de Organizacion', 'No especificado')}\n" \
+           f"Nombre de organización: {row.get('Nombre de Organizacion', 'No especificado')}\n" \
+           f"Correo de organización: {row.get('Correo de Organizacion', 'No especificado')}\n" \
+           f"Descripción de la organización: {truncateText(row.get('Descripcion de la Organizacion', ''))}"
