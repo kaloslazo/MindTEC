@@ -27,7 +27,7 @@ def loadAndSplitData(file_paths):
 
 def load_csv(file_path):
     documents = []
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='latin-1') as f:
         reader = csv.DictReader(f)
         for row in reader:
             if "syllabus" in file_path.lower():
