@@ -9,10 +9,13 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 data_paths = [
-    "./app/data/syllabus_extracted.csv",
-    "./app/data/promos_clean.csv",
-    "./app/data/deportes_clean.csv",
-    "./app/data/organized_organizations.csv"
+    #"./app/data/syllabus_extracted.csv",
+    #"./app/data/promos_clean.csv",
+    #"./app/data/deportes_clean.csv",
+    #"./app/data/organized_organizations.csv",
+    #./app/data/psychologist_faq.csv",
+    #"./app/data/psychologist_names.csv",
+    "./app/data/empleos.csv",
 ]
 
 chatbot_service = ChatbotService(data_paths)
