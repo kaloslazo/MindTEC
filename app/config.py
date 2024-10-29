@@ -16,3 +16,5 @@ class Config:
     QDRANT_COLLECTION_NAME = os.getenv('QDRANT_COLLECTION_NAME')
 
 config = Config()
+
+

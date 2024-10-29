@@ -13,6 +13,7 @@ data_paths = [
     "./app/data/promos_clean.csv",
     "./app/data/deportes_clean.csv",
     "./app/data/organized_organizations.csv"
+    "./app/data/ofertas_empleo_chatbot.csv"
 ]
 
 chatbot_service = ChatbotService(data_paths)

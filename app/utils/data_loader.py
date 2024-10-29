@@ -42,6 +42,9 @@ def load_csv(file_path):
             elif "organizations" in file_path.lower():
                 content = process_organizations(row)
                 doc_type = "organization"
+            elif "empleos" in file_path.lower():
+                content = process_empleos(row)
+                doc_type = "empleo"
             else:
                 logger.warning(f"Tipo de archivo desconocido: {file_path}")
                 continue
@@ -76,3 +79,12 @@ def process_organizations(row):
            f"Nombre de organización: {row.get('Nombre de Organizacion', 'No especificado')}\n" \
            f"Correo de organización: {row.get('Correo de Organizacion', 'No especificado')}\n" \
            f"Descripción de la organización: {truncateText(row.get('Descripcion de la Organizacion', ''))}"
+           
+           
+def process_empleos(row):
+    # Tipo de Empresa,Tipo de Carrera,Fecha de Publicacion,Experiencia,Ingles Requerido
+    return f"Tipo de Empresa: {row.get('Tipo de Empresa', 'No especificado')}\n" \
+            f"Tipo de Carrera: {row.get('Tipo de Carrera', 'No especificado')}\n" \
+            f"Fecha de Publicacion: {row.get('Fecha de Publicacion', 'No especificado')}\n" \
+            f"Experiencia: {row.get('Experiencia', 'No especificado')}\n" \
+            f"Ingles Requerido: {row.get('Ingles Requerido', 'No especificado')}\n"
